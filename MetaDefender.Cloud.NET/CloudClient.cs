@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Polly;
 
-namespace MetaDefender.Cloud.Core
+namespace MetaDefender.Cloud.NET
 {
     public class CloudClient
     {

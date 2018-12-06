@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using MetaDefender.Cloud.Core;
+using MetaDefender.Cloud.NET;
 
 namespace MetaDefender.Cloud.Example
 {
