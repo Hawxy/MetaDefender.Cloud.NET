@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28315.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaDefender.Cloud.Core", "MetaDefender.Cloud.Core\MetaDefender.Cloud.Core.csproj", "{48B528E5-C02D-4D84-BE12-7F1CCC4F3B06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaDefender.Cloud.Example", "MetaDefender.Cloud.Example\MetaDefender.Cloud.Example.csproj", "{D0F387C3-2C0B-4D87-9AF3-BC8B15D7DE8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48B528E5-C02D-4D84-BE12-7F1CCC4F3B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B528E5-C02D-4D84-BE12-7F1CCC4F3B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B528E5-C02D-4D84-BE12-7F1CCC4F3B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B528E5-C02D-4D84-BE12-7F1CCC4F3B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F387C3-2C0B-4D87-9AF3-BC8B15D7DE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F387C3-2C0B-4D87-9AF3-BC8B15D7DE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F387C3-2C0B-4D87-9AF3-BC8B15D7DE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F387C3-2C0B-4D87-9AF3-BC8B15D7DE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C90BB54-3D4E-4F36-B706-82CFE50D4401}
+	EndGlobalSection
+EndGlobal
