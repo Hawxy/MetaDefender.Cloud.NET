@@ -14,7 +14,7 @@ namespace MetaDefender.Cloud.Example
             {
                 filestream.Seek(0, SeekOrigin.Begin);
                 var scanResult = await client.ScanFileAndWaitAsync("Image.jpg", filestream);
-                Console.Write("Time " + scanResult.Data.ScanResults.TotalTime);
+                Console.Write("Time " + scanResult.ScanResults.TotalTime);
             }
             await Task.Delay(-1);
         }

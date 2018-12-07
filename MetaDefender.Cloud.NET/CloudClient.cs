@@ -44,7 +44,7 @@ namespace MetaDefender.Cloud.NET
         {
             var response = await UploadFileAsync(fileName, stream);
             return await Policy
-                .HandleResult<ScanResultsResponse>(x => x.Data.ScanResults.ProgressPercentage != 100)
+                .HandleResult<ScanResultsResponse>(x => x.ScanResults.ProgressPercentage != 100)
                 .WaitAndRetryAsync(10, retryAttempt => TimeSpan.FromSeconds(1))
                 .ExecuteAsync(async x => await GetResultsAsync(response.DataId), CancellationToken.None);
         }
@@ -66,15 +66,6 @@ namespace MetaDefender.Cloud.NET
     }
 
     public class ScanResultsResponse
-    {
-        [JsonProperty("success")]
-        public bool Success { get; set; }
-
-        [JsonProperty("data")]
-        public ScanResultsData Data { get; set; }
-    }
-
-    public class ScanResultsData
     {
         [JsonProperty("file_id")]
         public string FileId { get; set; }
@@ -103,14 +94,11 @@ namespace MetaDefender.Cloud.NET
         [JsonProperty("rest_version")]
         public long RestVersion { get; set; }
 
-        [JsonProperty("newer")]
-        public string Newer { get; set; }
+        [JsonProperty("votes")]
+        public Votes Votes { get; set; }
 
         [JsonProperty("scan_result_history_length")]
         public long ScanResultHistoryLength { get; set; }
-
-        [JsonProperty("votes")]
-        public Votes Votes { get; set; }
     }
 
     public class FileInfo
