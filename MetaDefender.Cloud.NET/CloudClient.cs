@@ -15,8 +15,8 @@ namespace MetaDefender.Cloud.NET
 
         public CloudClient(string apiKey)
         {
-            _httpClient = new HttpClient {BaseAddress = new Uri("https://api.metadefender.com/v3/")};
-            _httpClient.DefaultRequestHeaders.Add("Authorization", "apikey " + apiKey);
+            _httpClient = new HttpClient {BaseAddress = new Uri("https://api.metadefender.com/v4/")};
+            _httpClient.DefaultRequestHeaders.Add("apikey", apiKey);
         }
 
         public async Task<FileUploadResponse> UploadFileAsync(string fileName, Stream stream)
@@ -46,20 +46,11 @@ namespace MetaDefender.Cloud.NET
             return await Policy
                 .HandleResult<ScanResultsResponse>(x => x.Data.ScanResults.ProgressPercentage != 100)
                 .WaitAndRetryAsync(10, retryAttempt => TimeSpan.FromSeconds(1))
-                .ExecuteAsync(async x => await GetResultsAsync(response.Data.DataId), CancellationToken.None);
+                .ExecuteAsync(async x => await GetResultsAsync(response.DataId), CancellationToken.None);
         }
     }
 
     public class FileUploadResponse
-    {
-        [JsonProperty("success")]
-        public bool Success { get; set; }
-
-        [JsonProperty("data")]
-        public FileUploadData Data { get; set; }
-    }
-
-    public class FileUploadData
     {
         [JsonProperty("data_id")]
         public string DataId { get; set; }
@@ -197,7 +188,6 @@ namespace MetaDefender.Cloud.NET
     public class ScanResults
     {
         [JsonProperty("scan_details")]
-        
         public Dictionary<string, ScanDetail> ScanDetails { get; set; }
 
         [JsonProperty("rescan_available")]
